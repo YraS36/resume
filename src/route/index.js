@@ -268,5 +268,6 @@ router.get('/work', function (req, res) {
     footer,
   })
 })
+
 // Підключаємо роутер до бек-енду
 module.exports = router
