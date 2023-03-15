@@ -1,0 +1,90 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <header>
+    <h1>{{name}}</h1>
+
+    {{birthdate}}
+    <br />
+    {{birthplace}}
+    <br />
+    {{deathdate}}
+    <br />
+    {{deathplace}}
+    <br />
+    {{nationality}}
+    <br />
+    {{occupation}}
+    <br />
+    {{known_for}}
+  </header>
+  {{#each education}}
+    <b>{{year}}</b><br />
+    {{degree}}<br />
+    {{field}}<br />
+    {{institution}}
+  {{/each}}
+  <hr />
+  <ul>
+    {{#each notable_publications}}
+      <li>
+        {{year}}-
+        {{publisher}}/
+        {{title}}
+      </li>
+    {{/each}}
+    <br>
+    {{#each partners}}
+    <li>
+        {{years}}-
+        {{name}}/
+        {{relationship}}
+    {{/each}}
+    </li>
+    </ul>
+    <br>
+    {{#each awards}}
+    
+        <h4>{{title}}</h4>
+        
+        {{description}}
+        {{/each}}
+    <hr>
+  
+  <div>
+    <p>
+        {{influences}}
+    </p>
+    <p>
+        {{influenced}}
+    </p>
+    <p>
+        {{quotes}}
+    </p>
+  </div>
+     
+         {{#each major_discoveries}}
+        
+                <h4>{{title}}</h4>
+                {{year}}-
+                {{description}}
+        {{/each}}
+
+    {{#with contributions}}
+    <h4>{{title}} </h4>
+    {{year}}<br>
+    {{description}}<br>
+    {{field}}
+    {{/with}}
+
+
+
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
