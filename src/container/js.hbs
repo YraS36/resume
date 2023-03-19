@@ -1,0 +1,105 @@
+<div><header>
+    {{> title data='JavaScript'}}
+    {{description}}<br>
+    {{history.year}}<br>
+    <b>{{history.founder}}</b>
+    </header>
+    <hr>
+    <main>
+<button type="button" class="btn btn-primary">Number</button>
+<button type="button" class="btn btn-secondary">String</button>
+<button type="button" class="btn btn-success">Boolean</button>
+<button type="button" class="btn btn-danger">Null</button>
+<button type="button" class="btn btn-warning">Undefined</button>
+<button type="button" class="btn btn-info">Symbol</button>
+<button type="button" class="btn btn-light">Object</button>
+<br>
+<br>
+{{#with syntax}}
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    variables
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">{{variables}}</a></li>
+  </ul>
+</div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    functions
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">{{functions}}</a></li>
+  </ul>
+</div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    conditionals
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">{{conditionals}}</a></li>
+  </ul>
+</div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    loops
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">{{loops}}</a></li>
+  </ul>
+</div>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    classes
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">{{classes}}</a></li>
+  </ul>
+</div>
+{{/with}}
+<br>
+<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    libraries
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">jQuery</a></li>
+    <li><a class="dropdown-item" href="#">React</a></li>
+    <li><a class="dropdown-item" href="#">Angular</a></li>
+    <li><a class="dropdown-item" href="#">Vue</a></li>
+    <li><a class="dropdown-item" href="#">Node.js</a></li>
+    <li><a class="dropdown-item" href="#">Express.js</a></li>
+    <li><a class="dropdown-item" href="#">Lodash</a></li>
+    <li><a class="dropdown-item" href="#">Moment.js</a></li>
+  </ul>
+</div><br>
+<div class="btn-group">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    features
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">First-class functions</a></li>
+    <li><a class="dropdown-item" href="#">Closures</a></li>
+    <li><a class="dropdown-item" href="#">Dynamic typing</a></li>
+    <li><a class="dropdown-item" href="#">Prototype-based inheritance</a></li>
+    <li><a class="dropdown-item" href="#">Asynchronous programming with Promises and async/await</a></li>
+    <li><a class="dropdown-item" href="#">Modules with import/export statements</a></li>
+  </ul>
+</div><br>
+<ul class="list-group">
+  <li class="list-group-item">Babel</li>
+  <li class="list-group-item">Webpack</li>
+  <li class="list-group-item">ESLint</li>
+  <li class="list-group-item">Jest</li>
+  <li class="list-group-item">Mocha</li>
+  <li class="list-group-item">Chai</li>
+  <li class="list-group-item">Selenium</li>
+  <li class="list-group-item">Cypress</li>
+</ul>
+{{#each community}}
+<button type="button" class="btn btn-primary">{{name}}</button>
+<button type="button" class="btn btn-warning">{{type}}</button>
+{{/each}}
+
+    </main>
+</div>
