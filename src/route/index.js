@@ -468,7 +468,7 @@ router.get('/bio', function (req, res) {
 })
 
 // ================================================================
-router.get('/mac', function (req, res) {
+router.get('/mac', function (req, res){
   res.render('mac', {
     layout: 'basic',
     name: 'Apple MacBook Pro',
@@ -547,7 +547,11 @@ router.get('/mac', function (req, res) {
           price: 19.99,
         },
       ],
-router.get('/js', function (req, res) {
+    },
+    }),
+    //                  ↑↑ сюди вводимо JSON дані
+// ================================================================
+router. get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
@@ -728,7 +732,6 @@ router.get('/car', function (req, res) {
 })
 // ================================================================
 router.get('/web', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
     web: {
       languages: [
@@ -933,6 +936,4 @@ router.get('/program', function (req, res) {
     },
   })
 })
-// ===============================================================
-// Підключаємо роутер до бек-енду
-module.exports = router
+// router.get Створює нам один ентпоїнт
