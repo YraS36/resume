@@ -1,0 +1,84 @@
+{{!
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+<div>
+  {{#with program}}
+    {{#with excursion}}
+      <h2>{{name}}</h2>
+      <b>{{location.city}}
+        <br />
+        {{location.country}}
+        <br />
+        {{date}}
+      </b>
+      <hr />
+      {{#each program}}
+        {{name}}<br />
+        {{type}}<br />
+        {{duration}}<br />
+        {{#with details}}
+          
+          {{#with museum}}
+            <b>{{name}}</b><br />
+            <address>{{location.address}}/
+              {{location.city}}/
+              {{location.country}}<br /></address>
+          
+
+            <ul>{{#each exhibits}}
+                <li>
+                  {{name}}</li>
+                <li>{{artist}}</li>
+                <li>{{description}}</li>
+                <li>{{#if audio_guide}}(якщо треба git){{guide}}{{/if}}
+                </li>
+              {{/each}}
+            </ul>
+          
+          {{/with}}
+          {{#with guide}}
+            {{name}}<br />
+            {{language}}
+            {{rating}}<br />
+            <hr />
+          {{/with}}
+        {{/with}}
+        </div>
+
+        <div>
+          {{#with detail}}
+            {{#with venue}}
+              <b>{{name}}</b><br />
+              <address>
+                {{location.country}}/
+                {{location.city}}/
+                {{location.address}}
+              </address><br />
+            {{/with}}
+
+            <ul>{{#each performers}}
+                <li>{{name}}
+                  {{type}}</li>
+              {{/each}}</ul>
+
+            {{#with guide}}
+              {{name}}<br />
+              {{language}}
+              {{rating}}
+              <hr>
+            {{/with}}
+          {{/with}}
+        </div>
+
+      {{/each}}
+    {{/with}}
+  {{/with}}
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
