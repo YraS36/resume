@@ -1,0 +1,123 @@
+<div>
+    <header>
+        {{> title data= 'Toyota'}}
+        <h5>{{model}}
+        {{year}}
+        {{color}}</h5>
+    </header>
+        <main>
+            {{#with features}}
+                <div>
+                    <ul>{{#with interior}}<b>interior</b>
+                        <li>
+                            {{seats.material}}-
+                            {{seats.color}}
+                            {{#if seats.heated}}{{else}}(доп опція){{/if}}
+                            {{#if seats.ventilated}}{{else}}(доп опція){{/if}}
+                        </li>    
+                        <hr>
+                            {{#with dashboard}}<b>dashboard</b>
+                                {{material}}-
+                                {{color}}<br>
+                                
+                                {{#with display}}
+                                  <li>  {{type}}
+                                    {{size}}
+                                    {{resolution}}
+                                    {{#if touchscreen}}{{else}}(touchscreen){{/if}}</li>
+                                {{/with}}
+                            {{/with}}
+                            <hr>
+                            
+                            
+                            {{#with audio}}<b>audio</b>
+                           <li> {{system}}-({{speakers}})
+                             {{#if subwoofer}}{{else}}(subwoofer){{/if}}
+                             {{#if bluetooth}}{{else}}(bluetooth){{/if}}
+                              {{#if USB}}{{else}}(USB){{/if}}</li>
+                            {{/with}}
+                    {{/with}}<ul>
+                        <hr>
+                </div>
+                        <ul>{{#with exterior}}
+                           {{#with wheels}}<b>wheels</b>
+                            <li> {{size}}</li>
+                            <li>{{type}}</li>
+                           <li> {{color}}</li>
+                            {{/with}}</ul>
+                            <hr>
+                           <ul> {{#with headlights}}<b>headlights</b>
+                                <li>{{type}}</li>
+                                <li>{{brightness}}</li>
+                                {{#if automatic}}{{else}}(automatic){{/if}}
+                            {{/with}}</ul>
+                            <hr>
+                            {{/with}}
+                            <ul>
+                                {{#with sunroof}}<b>sunroof</b>
+                                    <li>{{type}}</li>
+                                    <li>{{size}}</li>
+                                     {{#if automatic}}{{else}}(automatic){{/if}}
+                                {{/with}}
+                            </ul>
+                            {{#with safety}}<b>safety</b>
+                                {{#with airbags}}
+                                <li>front ({{front}})</li>
+                                <li>side {{side}}</li>
+                                <li>knee ({{knee}}) </li>
+                                <li>rear ({{rear}}) </li>
+                                {{/with}}
+                                {{#if assistance}}{{else}}{{/if}}
+                            {{/with}}
+                            <hr>
+           <div> {{/with}}
+               {{#with engine}}<b>engine</b>
+                       {{type}}
+                       <p>{{displacement}}</p>
+                        <p>{{horsepower}}</p>
+                        <p>{{torque}}</p>
+                        <b>{{#with transmission}}</b>
+                            {{type}} {{gears}}
+                        {{/with}}
+                      {{/with}}
+              <div>  {{#with fuel_economy}}
+                      <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            fuel_economy
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">city {{city}}</li>
+                            <li class="list-group-item">highway {{highway}}</li>
+                            <li class="list-group-item">combined {{combined}}</li>
+                        </ul>
+                        </div>
+                        <hr>
+                        {{/with}}</div>
+                            {{#with price}}
+                            <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            price
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">base {{base}}</li>
+                            <li class="list-group-item">destination {{destination}}</li>
+                        </div>
+                        <hr>
+                        {{#with options}}
+                           <div class="card" style="width: 18rem;">
+                        <div class="card-header">
+                            options
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">navigation {{navigation}}</li>
+                            <li class="list-group-item">moonroof {{moonroof}}</li>
+                            <li class="list-group-item">premium_paint {{premium_paint}}</li>
+                        </div>
+                        
+                        {{/with}}
+                        <hr>
+                        <h4>total: {{total}}</h4>
+                            {{/with}}
+            </div>
+        </main>
+</div>
