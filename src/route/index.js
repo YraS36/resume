@@ -2,9 +2,7 @@
 const express = require('express')
 // Cтворюємо роутер - місце, куди ми підключаємо ендпоїнти
 const router = express.Router()
-
 //=================================================================
-
 var heder = {
   name: {
     firstname: 'Dmytro',
@@ -14,19 +12,16 @@ var heder = {
   salary: '600$ в місяць',
   address: 'Hrishatik street 27',
 }
-
 var footer = {
   social: {
     email: {
       text: 'Ivanov dmytro@mail.com',
       href: 'mailto:dmytro@mail.com',
     },
-
     phone: {
       text: '+380670000123',
       href: 'tel:+380670000123',
     },
-
     linkedin: {
       text: 'LinkedIn',
       href: 'https://www.linkedin.com/in/dmytro-test',
@@ -34,62 +29,47 @@ var footer = {
   },
 }
 // ================================================================
-
 // router.get Створює нам один ентпоїнт
-
-//           ↙ тут вводимо шлях (PATH) до сторінки
+// ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
+  // ↙ cюди вводимо назву файлу з сontainer
   res.render('index', {})
-  //                  ↑↑ сюди вводимо JSON дані
+  // ↑↑ сюди вводимо JSON дані
 })
-
 // ================================================================
-
-//              ↙ тут вводимо шлях (PATH) до сторінки
+// ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/summary', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
+  // ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
-
     page: {
       title: 'Resume $ sammary',
     },
-
     heder,
-
     main: {
       summary: {
         title: 'Summary',
         text: 'Open-minded for new technologies, with 1 years of experience in development. Whenever I start towork on a new project I learn the domain and try to understand the idea of the project.Good teamplayer, every colleague is a friend to me.',
       },
-
       experience: {
         title: 'Other experience',
         text: 'Pet project for parsing sport betting data from different platforms ( odds ) and sport statistics (tournament position, goals etc), analyzing by simple mathematics models and preparing probabilityfor such events like: money line - first win / draw / second win, totals etc.',
       },
     },
-
     footer,
   })
 })
-
 // ================================================================
-
-//              ↙ тут вводимо шлях (PATH) до сторінки
+// ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/skills', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
+  // ↙ cюди вводимо назву файлу з сontainer
   res.render('skills', {
     // ↙ сюди вводимо JSON дані
-
     page: {
       title: 'Resume $ Skills',
     },
-
     heder,
-
     main: {
       skills: [
         {
@@ -129,7 +109,6 @@ router.get('/skills', function (req, res) {
           point: null,
         },
       ],
-
       hobbies: [
         {
           name: 'Грати у футбол',
@@ -149,24 +128,19 @@ router.get('/skills', function (req, res) {
         },
       ],
     },
-
     footer,
   })
 })
-
 // ================================================================
-//              ↙ тут вводимо шлях (PATH) до сторінки
+// ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/education', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
+  // ↙ cюди вводимо назву файлу з сontainer
   res.render('education', {
     // ↙ сюди вводимо JSON дані
-
     page: {
       title: 'Resume $ education',
     },
-
     heder,
-
     main: {
       enducations: [
         {
@@ -204,22 +178,17 @@ router.get('/education', function (req, res) {
     footer,
   })
 })
-
 // ================================================================
-//              ↙ тут вводимо шлях (PATH) до сторінки
+// ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/work', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
+  // ↙ cюди вводимо назву файлу з сontainer
   res.render('work', {
     // ↙ сюди вводимо JSON дані
-
     layout: 'big',
-
     page: {
       title: 'Resume $ education',
     },
-
     heder,
-
     main: {
       works: [
         {
@@ -269,13 +238,11 @@ router.get('/work', function (req, res) {
   })
 })
 // ================================================================
-
-//              ↙ тут вводимо шлях (PATH) до сторінки
+// ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/person', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
+  // ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
     layout: 'person',
-
     person: {
       name: 'Emma Johnson',
       age: 32,
@@ -370,10 +337,9 @@ router.get('/person', function (req, res) {
   })
 })
 // ================================================================
-
-//              ↙ тут вводимо шлях (PATH) до сторінки
+// ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/bio', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
+  // ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
     layout: 'bio',
     name: 'Albert Einstein',
@@ -466,6 +432,8 @@ router.get('/bio', function (req, res) {
     },
   })
 })
+
+=======
 
 // =============================================================
 router.get('/facebook', function (req, res) {
@@ -625,6 +593,7 @@ router.get('/facebook', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+
 // ================================================================
 router.get('/mac', function (req, res) {
   res.render('mac', {
@@ -705,10 +674,14 @@ router.get('/mac', function (req, res) {
           price: 19.99,
         },
       ],
+    },
+  })
+})
+// ↑↑ сюди вводимо JSON дані
+// ================================================================
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
+  // ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
     layout: 'basic',
     name: 'JavaScript',
@@ -781,16 +754,13 @@ router.get('/js', function (req, res) {
       },
     ],
   })
-  //                  ↑↑ сюди вводимо JSON дані
+  // ↑↑ сюди вводимо JSON дані
 })
 // ================================================================
-
 // router.get Створює нам один ентпоїнт
-
 router.get('/car', function (req, res) {
   // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
+  // ↙ cюди вводимо назву файлу з сontainer
   res.render('car', {
     layout: 'basic',
     make: 'Toyota',
@@ -882,11 +852,10 @@ router.get('/car', function (req, res) {
       total: 28990,
     },
   })
-  //                  ↑↑ сюди вводимо JSON дані
+  // ↑↑ сюди вводимо JSON дані
 })
 // ================================================================
 router.get('/web', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
     web: {
       languages: [
@@ -1008,9 +977,15 @@ router.get('/web', function (req, res) {
           ],
         },
       ],
+
+    },
+  })
+})
+=======
       
+
 router.get('/program', function (req, res) {
-  //             ↙ cюди вводимо назву файлу з сontainer
+  // ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
     layout: 'program',
     program: {
@@ -1092,6 +1067,80 @@ router.get('/program', function (req, res) {
     },
   })
 })
-// ===============================================================
-// Підключаємо роутер до бек-енду
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/task21', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('task21', {
+    layout: 'basic',
+    heading: {
+      main: {
+        title: 'JavaScript',
+        text: 'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+      second: {
+        title: 'Stack Overflow',
+        text: 'First-class functions',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+      subblock: {
+        title: 'JavaScript Weekly',
+        text: 'Prototype-based inheritance newsletter',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+    },
+    nested_display: {
+      title: 'HTML',
+      children_display: {
+        title: 'Outdated HTML tags',
+        text: 'tags that have been identified as deprecated and not recommended for use in HTML version 5',
+        button: {
+          text: 'Орen',
+        },
+      },
+      header_text: 'Sections',
+      button: {
+        text: 'Learn more',
+      },
+    },
+    paragraph: {
+      title: 'About modules',
+      text: 'Modules with import/export statements',
+
+      button: {
+        text: 'Open link page',
+        url: 'https://google.com',
+      },
+      list_name: [
+        {
+          text: 'Github',
+          url: 'https://github.com/',
+        },
+        {
+          text: 'Bootstrap',
+          url: 'https://getbootstrap.com/',
+        },
+      ],
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
 module.exports = router
