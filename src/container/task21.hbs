@@ -1,0 +1,52 @@
+<div>
+
+  {{#with heading}}
+    <div class='card'>
+      <div class='card-body'>
+        <main>
+          {{#with mine}}
+            <h1>{{title}}</h1>
+            <p>{{text}}</p>
+            <hr />
+            <button
+              type='button'
+              class='btn btn-primary'
+            >{{button_text.solid}}</button>
+            <br />
+            <hr />
+            <button
+              type='button'
+              class='btn btn-outline-primary'
+              disabled
+            >{{button_text.outline}} </button>
+          {{/with}}
+        </main>
+      </div>
+    </div>
+
+    <div class='card'>
+      <div class='card-body'>
+        <main>
+          {{#with second}}
+            <h2>{{title}}</h2>
+            <p>{{text}}</p>
+            <hr />
+            <button
+              type='button'
+              class='btn btn-primary'
+            >{{button_text.solid}}</button>
+            <br />
+            <hr />
+            <button
+              type='button'
+              class='btn btn-outline-primary'
+              disabled
+            >{{button_text.outline}} </button>
+          {{/with}}
+        </main>
+      </div>
+    </div>
+    <br />
+
+  {{/with}}
+</div>
