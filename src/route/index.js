@@ -548,8 +548,8 @@ router.get('/mac', function (req, res){
         },
       ],
     },
-  }
-})
+  },
+)
     //                  ↑↑ сюди вводимо JSON дані
 // ================================================================
 router. get('/js', function (req, res) {
@@ -856,7 +856,7 @@ router.get('/web', function (req, res) {
       ],
     },
   },
-} )
+)
 
 
 router.get('/program', function (req, res) {
@@ -942,6 +942,7 @@ router.get('/program', function (req, res) {
     },
   })
 })
+}
 // router.get Створює нам один ентпоїнт
 // ================================================================
 
