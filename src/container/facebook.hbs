@@ -1,0 +1,67 @@
+<div>
+    <main>
+    {{> title data="Facebook"}}
+       <section>
+            <ul>
+                {{#each users}}
+                    <li>
+                        ({{id}})
+                        {{name}},
+                        {{gender}}
+                        {{age}}
+                    </li>
+                    <div>
+                        {{#each friends}}
+                            <li>
+                                ({{id}})
+                                {{name}},
+                                {{gender}}
+                                {{age}}
+                            </li>
+                        
+
+                            <div>
+                                {{#each mutual_friends}}
+                                    <li>
+                                        ({{id}})
+                                        {{name}},
+                                        {{gender}}
+                                        {{age}}
+                                    </li>
+                                {{/each}}
+                            </div>
+                        {{/each}}
+                    </div>
+
+                    {{#each groups}}
+                        <li>
+                            ({{id}})
+                            {{name}}
+                            {{gender}}
+                            {{age}}
+                            {{description}}
+                        </li>
+                        {{#each members}}
+                            <li>
+                                ({{id}})
+                                {{name}},
+                                {{gender}}
+                                {{age}}
+                            </li>
+                        {{/each}}
+                            <hr>
+                    {{/each}}
+                    
+                    {{#each mutual_friends}}
+                        <ll>
+                            ({{id}})
+                            {{name}},
+                            {{gender}}
+                            {{age}}
+                        </ll>
+                    {{/each}}
+                {{/each}}
+            </ul>
+        </section>
+    </main>
+</div>
