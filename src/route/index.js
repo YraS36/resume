@@ -432,6 +432,168 @@ router.get('/bio', function (req, res) {
     },
   })
 })
+
+
+// =============================================================
+router.get('/facebook', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('facebook', {
+    layout: 'basic',
+    name: 'Facebook',
+    users: [
+      {
+        id: 1,
+        name: 'John Doe',
+        gender: 'Male',
+        age: 30,
+        friends: [
+          {
+            id: 2,
+            name: 'Jane Smith',
+            gender: 'Female',
+            age: 27,
+            mutual_friends: [
+              {
+                id: 4,
+                name: 'Samantha Lee',
+                gender: 'Female',
+                age: 25,
+              },
+            ],
+          },
+          {
+            id: 5,
+            name: 'Mike Williams',
+            gender: 'Male',
+            age: 28,
+            mutual_friends: [
+              {
+                id: 7,
+                name: 'David Kim',
+                gender: 'Male',
+                age: 29,
+              },
+            ],
+          },
+        ],
+        groups: [
+          {
+            id: 1,
+            name: 'Hiking Enthusiasts',
+            description:
+              'A group for people who love hiking and the great outdoors',
+            members: [
+              {
+                id: 8,
+                name: 'Sarah Johnson',
+                gender: 'Female',
+                age: 25,
+              },
+            ],
+          },
+          {
+            id: 2,
+            name: 'Foodies United',
+            description:
+              'A group for food lovers to share recipes and restaurant recommendations',
+            members: [
+              {
+                id: 5,
+                name: 'Mike Williams',
+                gender: 'Male',
+                age: 28,
+              },
+              {
+                id: 8,
+                name: 'Sarah Johnson',
+                gender: 'Female',
+                age: 25,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 16,
+        name: 'Amy Lee',
+        gender: 'Female',
+        age: 30,
+        friends: [
+          {
+            id: 15,
+            name: 'Peter Kim',
+            gender: 'Male',
+            age: 32,
+            mutual_friends: [
+              {
+                id: 17,
+                name: 'David Chen',
+                gender: 'Male',
+                age: 33,
+              },
+              {
+                id: 19,
+                name: 'Erica Wong',
+                gender: 'Female',
+                age: 29,
+                mutual_friends: [
+                  {
+                    id: 20,
+                    name: 'Alex Lee',
+                    gender: 'Male',
+                    age: 31,
+                  },
+                ],
+              },
+            ],
+            groups: [
+              {
+                id: 3,
+                name: 'Travel Addicts',
+                description:
+                  'A group for people who love to travel and explore new places',
+                members: [
+                  {
+                    id: 22,
+                    name: 'Jackie Chen',
+                    gender: 'Female',
+                    age: 26,
+                  },
+                ],
+              },
+              {
+                id: 4,
+                name: 'Pet Lovers',
+                description:
+                  'A group for people who love their furry friends',
+                members: [
+                  {
+                    id: 16,
+                    name: 'Amy Lee',
+                    gender: 'Female',
+                    age: 30,
+                  },
+                  {
+                    id: 25,
+                    name: 'John Smith',
+                    gender: 'Male',
+                    age: 33,
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+
+
 // ================================================================
 router.get('/mac', function (req, res) {
   res.render('mac', {
@@ -815,9 +977,19 @@ router.get('/web', function (req, res) {
           ],
         },
       ],
+
     },
   })
 })
+
+
+    },
+  })
+})
+
+      
+
+
 router.get('/program', function (req, res) {
   // ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
@@ -1230,5 +1402,67 @@ router.get('/task31', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+
 // ================================================================
+router.get('/task22', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('task22', {
+    layout: 'basic',
+    page_header: {
+      title: 'InnovaMind',
+      description: 'Welcome to our wonderful community',
+    },
+    section: {
+      about_us: {
+        title_list: {
+          main: 'InnovaMind',
+          sub: 'InnovaMind is a forward-thinking startup focused on innovation. We are dedicated to creating efficient and powerful software through the use of first-class functions.',
+        },
+        button: { text: 'Show more' },
+      },
+      advantage: {
+        title: 'Advantage',
+        efficiency: {
+          title: 'Efficiency',
+          sub_title: 'Streamline your software development',
+          description:
+            'Streamline your software development with our innovative platform...',
+          button: 'Show more',
+        },
+        innovation: {
+          title: 'Innovation',
+          sub_title:
+            'Forward-thinking approach to programming',
+          description:
+            ' Stay ahead of the curve with our forward-thinking approach to programming...',
+          button: 'Show more',
+        },
+        collaboration: {
+          title: 'Collaboration',
+          sub_title: 'Connect with like-minded developers',
+          description:
+            'Connect with a community of like-minded developers to share knowledge and insights...',
+          button: 'Show more',
+        },
+      },
+      agreement: {
+        title: 'Terms of use',
+        info: {
+          sub_title: 'Check out our requirements',
+          detail: {
+            text: 'By using or accessing the service, you agree to be bound by the terms and conditions outlined in the agreement.',
+            button: 'Аccept',
+          },
+        },
+      },
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+
 module.exports = router
