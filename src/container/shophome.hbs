@@ -1,23 +1,30 @@
 <main>
-  <div class='card'>
-    <div class='nav'>
+  <div class='card p-2'>
+    
       {{#with navigation}}
-        <p>{{Logo}}</p>
+      <div class="row">
+        <div class="col-4"><h1>{{Logo}}</h1></div>
+        <div class="col-8">
+          <ul class="nav justify-content-end">
         {{#each links}}
-          <a href='{{href}}' class='nav-link'>{{text}}</a>
+          <li class="nav-item">
+            <a class="nav-link" href="{{href}}">{{text}}</a>
+          </li>
         {{/each}}
+        </ul>
+        </div>
+        </div>
       {{/with}}
-    </div>
   </div>
   <br />
 
-
+    <div class="col-12">
       {{#with newsBlock}}
         <h3 class='text-center'>{{title}}</h3>
         <hr />
-        <section class='col-6 row'>
+        <section class='row'>
             {{#each cards}}
-              <div class='card text-bg-dark'>
+              <div class='card text-bg-dark col-6'>
                 <div class='card-footer'><h5>{{title}}
                   {{#if isTop}}
                       <span
@@ -37,9 +44,9 @@
             {{/each}}
         </section>
       {{/with}}
-
+    </div>
     <br />
-
+  <div class="col-12">
     <div class='nav nav-tabs'>
   {{#with goodsBlock}}
         {{#each tabs}}
@@ -56,9 +63,9 @@
     
     <br>
 
-    <section class="row-1 col-6">
+    <section class="row">
       {{#each cards}}
-        <div class="card title">
+        <div class="card title col-6">
           <img class="card-img-top" src="{{image}}">
           <h5>{{title}}
              {{#if isNew}}
@@ -75,18 +82,23 @@
       {{/each}}
     </section>
   {{/with}}
+  </div>
   <hr>
+  <div class="col-12">
   {{#with subscribe}}
-     <div class="card">
+     <div class="card text-bg-dark">
     <h2>{{header}}</h2>
     <p>{{description}}</p>
-    {{#each buttons}}
-    <div class="col-3">
-      <button class="btn btn-primary ronded-pill ms-5" src="{{link}}">{{text}}</button>
-      </div>
+    <ul class="nav justify-content-end">
+      {{#each buttons}}
+    <li class="nav-item pb-3">
+      <button type="button" class="btn btn-primary rounded-pill" src="{{link}}">{{text}}</button>
+      </li>
     {{/each}}
+    </ul>
   </div>
   {{/with}}
+  </div>
   <hr>
   <section class="card text-center">
     {{#with service}}
@@ -98,15 +110,20 @@
     {{/with}}
   </section>
   <hr>
-  {{#each footer}}
-      <table>
-         <th>
-        <td>
-          <a href='{{link}}' class='nav-link'>{{text}}</a>
-        </td>
-       </th>
-      </table>
-  {{/each}}
+   
+ {{#each footer}}
+      <div class="row">
+          <ul class="nav">
+        {{#each this}}
+          <li class="nav-item col-3 p-1">
+            <a class="nav-link" href="{{link}}">{{text}}</a>
+          </li>
+        {{/each}}
+        </ul>
+        </div>  
+      {{/each}}
+
+  
 </main>
   
 
