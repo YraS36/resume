@@ -11,6 +11,9 @@
             <a class="nav-link" href="{{href}}">{{text}}</a>
           </li>
         {{/each}}
+        <li class="nav-item ">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
         </ul>
         </div>
         </div>
@@ -24,7 +27,7 @@
         <hr />
         <section class='row'>
             {{#each cards}}
-              <div class='card text-bg-dark col-6'>
+              <div class='card text-bg-dark col-3 p-2'>
                 <div class='card-footer'><h5>{{title}}
                   {{#if isTop}}
                       <span
@@ -50,14 +53,14 @@
     <div class='nav nav-tabs'>
   {{#with goodsBlock}}
         {{#each tabs}}
-
           {{#if isActive}}
             <a href='#' class='nav-link active'>{{text}}</a>
-          {{/if}}
-          {{#if isDisabled}}<a
-              href='#'
-              class='nav-link'
-            >{{text}}</a>{{/if}}
+          {{else}}
+          {{#if isDisabled}}<a href='#' class='nav-link disabled'>{{text}}</a>
+          {{else}}
+          <a href='#' class='nav-link'>{{text}}</a>
+            {{/if}}
+            {{/if}}
         {{/each}}
     </div>
     
@@ -65,7 +68,7 @@
 
     <section class="row">
       {{#each cards}}
-        <div class="card title col-6">
+        <div class="card title col-4">
           <img class="card-img-top" src="{{image}}">
           <h5>{{title}}
              {{#if isNew}}
@@ -100,7 +103,7 @@
   {{/with}}
   </div>
   <hr>
-  <section class="card text-center">
+  <section class="card text-center text-bg-success">
     {{#with service}}
     <p type="display-5">{{title}}</p>
     <p>{{description}}</p>
@@ -116,14 +119,23 @@
           <ul class="nav">
         {{#each this}}
           <li class="nav-item col-3 p-1">
-            <a class="nav-link" href="{{link}}">{{text}}</a>
+            <a class="nav-link" href="">{{text}}</a>
           </li>
+          
+          
         {{/each}}
-        </ul>
+        
         </div>  
       {{/each}}
-
-  
+      {{#if disabled}}
+        {{else}}
+        <ul class="nav">
+        <li class="nav-item ">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          {{/if}}
+      </ul>
+      
 </main>
   
 
