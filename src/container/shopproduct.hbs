@@ -11,6 +11,9 @@
             <a class="nav-link" href="{{href}}">{{text}}</a>
           </li>
         {{/each}}
+        <li class="nav-item ">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
         </ul>
         </div>
         </div>
@@ -26,14 +29,15 @@
   {{/each}}
   </ol>
     <br>
-    <section class="rov col-12">
-      
-        {{#with productData}}
-              <img class="col-6" class="card-img-top" src="{{img}}">
+
+    <div class="row g-5">
+      <div class="col-6">
+                {{#with productData}}
+              <img class="card-img-top" src="{{img}}">
               <br>
               <br>
               {{#with info}}
-              <div class="card col-6">
+              <div class="card">
             <div class="card-title">{{title}}</div>
             <p class="card-body">{{about}}</p>
             <h4>{{price}}
@@ -50,18 +54,21 @@
            {{/each}}</h4>
           {{/with}}
            </div>
-           <div class="col-6">
-            {{#with item}}
-        <table class='table'>
-          <thead class="table-bordered">
-            <tr>
-                {{#each head}}
-                    <th>{{this}}</th>
-                    {{/each}}
-            </tr>
-          </thead>
+           
+
+      </div>
+      <div class="col-5">
+        <div class="card">
+           {{#with item}}
+          <table class='table'>
+            <thead class="table-bordered">
+             <tr>
+              {{#each head}}
+                <th>{{this}}</th>
+                {{/each}}
+                </tr>
+            </thead>
           <tbody>
-            
               {{#each body}}  
               <tr>{{#each this}}
                 {{#if @first}}
@@ -75,9 +82,28 @@
             </tr>
           </tbody>
         </table>
-      {{/with}}
-           </div>
-    </section>
+        {{/with}}
+        </div>
+        <div class="card">
+          {{#with param}}
+            <p class="card-header">{{title}}</p>
+            <ol class="list-group">
+              {{#each list}}
+              <li class="list-group-item">{{this}}</li>
+              {{/each}}
+            </ol>
+            {{/with}}
+            <div class="alert-danger">
+              {{#with alert}}
+              {{#if isError}}{{text}}{{/if}}
+              {{/with}}
+            </div>
+          
+        </div>
+       
+      </div>
+    </div>
+        
     
 
 
