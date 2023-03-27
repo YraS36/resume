@@ -1,24 +1,5 @@
 <main>
-  <div class='card p-2'>
-    
-      {{#with navigation}}
-      <div class="row">
-        <div class="col-4"><h1>{{Logo}}</h1></div>
-        <div class="col-8">
-          <ul class="nav justify-content-end">
-        {{#each links}}
-          <li class="nav-item">
-            <a class="nav-link" href="{{href}}">{{text}}</a>
-          </li>
-        {{/each}}
-        <li class="nav-item ">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-        </div>
-        </div>
-      {{/with}}
-  </div>
+  
   <br />
   
   <ol class="breadcrumb">
@@ -124,62 +105,8 @@
             </ul>
            </div>
  {{/with}}
-
- <div class="col-12">
-      {{#with goodsOtherBlock}}
-        <h3 class='text-center'>{{title}}</h3>
-        <hr />
-        <section class='row'>
-            {{#each cards}}
-              <div class='card col-4'>
-                <img class="card-img-top" src="{{image}}">
-                <div class='card-footer'><h5>{{title}}
-                  {{#if isHot}}
-                      <span
-                        class='badge text-bg-success rounded-pill text-capitalixe'
-                      >Нове</span>
-                  {{/if}}
-                  {{#if idNew}}
-                      <span
-                        class='badge text-bg-warning rounded-pill text-capitalixe'
-                      >Hot</span>
-                  {{/if}}</h5>
-                </div>
-                <hr color='#000' />
-                <div class='card-body'>{{description}}
-                </div>
-              </div>
-            {{/each}}
-        </section>
-      {{/with}}
-    </div>
-
-
-
-  <section class="card text-center text-bg-success ">
-    {{#with service}}
-    <p type="display-5">{{title}}</p>
-    <p>{{description}}</p>
-    {{#each buttons}}
-    <button type="button" class="btn btn-primary " src="{{link}}">{{text}}</button>
-    {{/each}}
-    {{/with}}
-  </section>
-  <hr>
-   
- {{#each footer}}
-      <div class="row">
-          <ul class="nav">
-        {{#each this}}
-          <li class="nav-item col-3 p-1">
-            <a class="nav-link" href="{{link}}">{{text}}</a>
-          </li>
-        {{/each}}
-        </ul>
-        </div>  
-      {{/each}}
-
-  
+  {{> shopcard}}
+  {{> shophome}} 
 </main>
   
 
