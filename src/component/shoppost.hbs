@@ -1,0 +1,29 @@
+<div class='row'>
+  <div class='col-12'>
+    {{#with newsOtherBlock}}
+      <h3 class='text-center'>{{title}}</h3>
+      <hr />
+      <section class='row'>
+        {{#each cards}}
+          <div class='card text-bg-dark col-3'>
+            <div class='card-footer'><h5>{{title}}
+                {{#if isTop}}
+                  <span
+                    class='badge text-bg-success rounded-pill text-capitalixe'
+                  >Нове</span>
+                {{/if}}
+                {{#if idNew}}
+                  <span
+                    class='badge text-bg-danger rounded-pill text-capitalixe'
+                  >Top</span>
+                {{/if}}</h5>
+            </div>
+            <hr color='#000' />
+            <div class='card-body'>{{description}}
+            </div>
+          </div>
+        {{/each}}
+      </section>
+    {{/with}}
+  </div>
+</div>
