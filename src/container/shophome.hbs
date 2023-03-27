@@ -1,24 +1,5 @@
 <main>
-  <div class='card p-2'>
-    
-      {{#with navigation}}
-      <div class="row">
-        <div class="col-4"><h1>{{Logo}}</h1></div>
-        <div class="col-8">
-          <ul class="nav justify-content-end">
-        {{#each links}}
-          <li class="nav-item">
-            <a class="nav-link" href="{{href}}">{{text}}</a>
-          </li>
-        {{/each}}
-        <li class="nav-item ">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-        </div>
-        </div>
-      {{/with}}
-  </div>
+  
   <br />
     <div class="col-12">
       {{#with newsBlock}}
@@ -113,22 +94,7 @@
   </section>
   <hr>
    
- {{#each footer}}
-      <div class="row">
-          <ul class="nav">
-        {{#each this}}
-          <li class="nav-item col- p-1">
-            <a class="nav-link" href="{{link}}">{{text}}</a>
-          <li class="nav-item col-3 p-1">
-            <a class="nav-link" href="">{{text}}</a>
-          </li>
-          
-          
-        {{/each}}
-        
-        </div>  
-      {{/each}}
-            <a class="nav-link disabled" href="#">Disabled</a>
+
       
 </main>
   
