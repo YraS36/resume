@@ -1,0 +1,15 @@
+{{> breadcrumb}}
+<main class="row g-5">
+    {{#with newsData}}
+    <img class="card-img-top" src="{{photo}}">
+    <h2>{{head.heading}}</h2>
+    <p>{{head.description}} </p>
+    {{#each body}}
+    <h5>{{title}}.</h5>
+    <p>{{text}}</p>
+    {{/each}}
+    {{/with}}
+    {{> shoppost}}
+    {{> shophome}}
+
+</main>
