@@ -432,6 +432,7 @@ router.get('/bio', function (req, res) {
     },
   })
 })
+
 // =============================================================
 router.get('/facebook', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -589,6 +590,7 @@ router.get('/facebook', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
+
 // ================================================================
 router.get('/mac', function (req, res) {
   res.render('mac', {
@@ -1444,8 +1446,7 @@ router.get('/task31', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-// ================================================================
-//===================================================================
+//           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/shophome', function (req, res) {
   // res.render генерує нам HTML сторінку
 
