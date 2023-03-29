@@ -1,0 +1,97 @@
+<main>
+  <div>
+    {{#with header}}
+      <div class='row'>
+        <div class='col-4'><h2>{{title}}</h2></div>
+        <div class='col-8'>
+          <ul class='nav justify-content-end'>
+            {{#with button}}
+              <li class='nav-item'>
+                <a
+                  class='btn btn-outline-secondary'
+                  href='{{link}}'
+                >{{text}}</a>
+              </li>
+            {{/with}}
+          </ul>
+        </div>
+      </div>
+    {{/with}}
+  </div>
+  <hr />
+  {{#each goodsBlock}}
+    <div class='card'>
+      <div class='row'>
+        <div class='col-2'>
+          <img class='card-img-top pt-3' src='{{image}}' />
+        </div>
+        <div class='col-4 pt-3'>
+          <h5>{{name}} </h5>
+          <p>{{description}}</p>
+        </div>
+
+        <div class='col-2 pt-5'>
+          <p>{{price.title}}</p>
+          <b>{{price.value}}</b>
+        </div>
+        <div class='col-2 pt-5'>{{amount}}</div>
+        <div class='col-2 pt-3'>
+          {{#each buttons}}
+            {{#if isPrimary}}
+              <a class='btn btn-primary mb-3'>{{text}}</a>
+            {{else}}
+
+              {{#if isDanger}}
+                <a
+                  class='btn btn-outline-danger'
+                >{{text}}</a>
+              {{/if}}
+            {{/if}}
+          {{/each}}
+        </div>
+
+      </div>
+    </div>
+  {{/each}}
+
+  {{#with total}}
+    <div class='row'>
+      <div class='col-8 mt-3'><h2>{{title}}</h2>
+        <p class='display-3'>{{amount}}</p>
+        <p>{{delivery}}</p>
+      </div>
+      <div class='col-4 mt-5'>
+        {{#each buttons}}
+          {{#if isSuccess}}
+            <a class='btn btn-success mb-3'>{{text}}</a>
+          {{else}}
+            {{#if isOutline}}
+              <a
+                class='btn btn-outline-success'
+              >{{text}}</a>
+            {{/if}}
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  {{/with}}
+
+  <hr />
+  {{> shopcard}}
+
+    {{#with subscribe}}
+    <div class="card text-bg-dark">
+        <div class="row p-3">
+    <div class="col-7">
+        <h2>{{header}}</h2>
+        <p>{{description}}</p>
+    </div>
+    <div class="col-5 mt-3">
+        {{#each buttons}}
+        <a class='btn btn-primary m-2' href="{{link}}">{{text}}</a>
+        {{/each}}
+  </div>
+  </div>
+    </div>
+    {{/with}}
+</main>
