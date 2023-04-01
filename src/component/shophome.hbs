@@ -3,11 +3,13 @@
     <p type='display-5'>{{title}}</p>
     <p>{{description}}</p>
     {{#each buttons}}
-      <button
-        type='button'
-        class='btn btn-primary'
-        src='{{link}}'
-      >{{text}}</button>
+      <div>
+        <button
+          type='button'
+          class='btn btn-primary'
+          src='{{link}}'
+        >{{text}}</button>
+      </div>
     {{/each}}
   {{/with}}
 </section>
