@@ -94,15 +94,14 @@
     <br>
     <hr>
     <br>
-    <br>{{#each reviewList}}
-
+    <br>
+    {{#each reviewList}}
     <div class="card mb-3">
             {{#with title}}
                 <div class="card-header row"> 
                     <b class="col-8">{{userName}}</b>
                     <p class="col-2">{{date}}</p>
-                    <p class="col-8">{{caption}}</p>
-                    
+                    <p class="col-8">{{caption}}</p> 
                 </div>
             {{/with}}    
                 <div class="card-dody row">
@@ -124,9 +123,9 @@
                         <p>{{disadvantages.text}}</p>
                         
                         
-                        <div class="col-2">
+                        <div>
                             {{#each images}}    
-                            <img class="card-img-top" src="{{this}}">
+                            <img class="m-1" src="{{this}}" alt="photo" width="100px">
                         {{/each}}
                         </div>
                 </div>        
@@ -138,12 +137,8 @@
                     
                 </div>
                         {{/each}}
-                        
                     {{/with}}
-                
-             
-        {{/each}}
-        
+        {{/each}}  
     </div>
         {{> shophome}}
 </div>
