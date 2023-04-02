@@ -18,10 +18,8 @@
       crossorigin='anonymous'
     />
   </head>
-
+    {{> mayhead}}
   <body>
-    {{> shopheder}}
-    {{> Shopnav}}
 
     {{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу }}
     {{{body}}}
@@ -30,6 +28,5 @@
       src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js'
     ></script>
   </body>
-  {{> shopfooter}}
 
 </html>

@@ -1,5 +1,6 @@
-{{> breadcrumb}}
-<main class="row g-5">
+<main>
+    {{> breadcrumb}}
+<div class="row g-5">
     {{#with newsData}}
     <img class="card-img-top" src="{{photo}}">
     <h2>{{head.heading}}</h2>
@@ -12,4 +13,5 @@
     {{> shoppost}}
     {{> shophome}}
 
+</div>
 </main>
